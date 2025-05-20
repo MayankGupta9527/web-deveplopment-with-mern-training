@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, textarea { display: block; margin-bottom: 10px; width: 300px; padding: 8px; }
+    button { padding: 10px 20px; cursor: pointer; }
+    .id-card {
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px solid #000;
+      width: 320px;
+      background-color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <label>Name:</label>
+  <input type="text" id="name">
+
+  <label>Course:</label>
+  <input type="text" id="course">
+
+  <label>Section:</label>
+  <input type="text" id="section">
+
+  <label>Emergency Contact:</label>
+  <input type="text" id="contact">
+
+  <label>Address:</label>
+  <textarea id="address" rows="3"></textarea>
+
+  <button onclick="generateIDCard()">Generate ID Card</button>
+
+  <div class="id-card" id="idCard">
+    <h3>ID Card</h3>
+    <p><strong>Name:</strong> <span id="idName"></span></p>
+    <p><strong>Course:</strong> <span id="idCourse"></span></p>
+    <p><strong>Section:</strong> <span id="idSection"></span></p>
+    <p><strong>Emergency Contact:</strong> <span id="idContact"></span></p>
+    <p><strong>Address:</strong> <span id="idAddress"></span></p>
+  </div>
+
+  <script>
+    function generateIDCard() {
+      document.getElementById('idName').innerText = document.getElementById('name').value;
+      document.getElementById('idCourse').innerText = document.getElementById('course').value;
+      document.getElementById('idSection').innerText = document.getElementById('section').value;
+      document.getElementById('idContact').innerText = document.getElementById('contact').value;
+      document.getElementById('idAddress').innerText = document.getElementById('address').value;
+
+      document.getElementById('idCard').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

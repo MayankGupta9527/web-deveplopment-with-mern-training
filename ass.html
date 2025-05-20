@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>B&W Toggle</title>
+  <style>
+    body.grayscale { filter: grayscale(100%); }
+    img { width: 300px; cursor: pointer; margin: 10px; }
+  </style>
+</head>
+<body>
+
+  <h2>Click the image to toggle black & white mode</h2>
+  <img src="image1.jpeg" alt="Toggle B&W" id="toggleImage">
+
+  <script>
+    const img = document.getElementById('toggleImage');
+    img.addEventListener('click', () => {
+      const gray = document.body.classList.toggle('grayscale');
+      img.src = gray ? 'image1.jpeg' : 'image2.jpeg';
+      img.alt = gray ? 'Make Color' : 'Make Black & White';
+    });
+  </script>
+
+</body>
+</html>
